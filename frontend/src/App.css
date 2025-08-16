@@ -6,6 +6,9 @@
   background: #000000;
   color: white;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .App-header {
@@ -13,6 +16,8 @@
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: 100%;
 }
 
 .App-header h1 {
@@ -40,16 +45,24 @@
   justify-content: center;
   padding: 2rem;
   width: 100%;
+  max-width: 100%;
+  min-width: 100%;
 }
 
 /* Connect Section Styles */
 .connect-section {
-  max-width: 800px;
   width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .hero-content {
   text-align: center;
+  width: 100%;
+  max-width: 800px;
+  min-width: 100%;
 }
 
 .hero-icon {
@@ -149,10 +162,16 @@
 /* Connected Section Styles */
 .connected-section {
   width: 100%;
-  max-width: 1200px;
+  max-width: 100%;
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .wallet-dashboard {
+  width: 100%;
+  max-width: 1200px;
+  min-width: 100%;
   display: grid;
   grid-template-columns: 1fr 400px;
   gap: 2rem;
@@ -349,6 +368,8 @@
   background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(10px);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: 100%;
 }
 
 .App-footer p {
@@ -372,6 +393,34 @@
   0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
   40% { transform: translateY(-10px); }
   60% { transform: translateY(-5px); }
+}
+
+/* Additional fixes for full width */
+.App > * {
+  width: 100%;
+  max-width: 100%;
+}
+
+.App-main > * {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Temporary debugging - remove after testing */
+.App {
+  border: 2px solid red;
+}
+
+.App-main {
+  border: 2px solid blue;
+}
+
+.connect-section {
+  border: 2px solid green;
+}
+
+.connected-section {
+  border: 2px solid orange;
 }
 
 /* Responsive Design */
