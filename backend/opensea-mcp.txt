@@ -1,0 +1,109 @@
+Quick Start Examples
+Once connected, try these prompts to explore OpenSea MCP capabilities:
+
+"What's the floor price of Bored Ape Yacht Club?"
+"Show me trending NFT collections on Ethereum"
+"Get information about the BONK token on Solana"
+"Check the NFT balance for wallet 0x123..."
+"Find NFT collections related to gaming"
+Supported Tools
+Now that you have installed the OpenSea MCP, let's explore how AI assistants can use OpenSea MCP tools to search, analyze, and interact with blockchain and marketplace data.
+
+These tools work seamlessly together through prompts, and their real power comes from combining them. With a single prompt, you can search for collections, check token prices, analyze wallet holdings, and get swap quotes across multiple blockchains.
+
+Name	Description	Sample prompts
+search	AI-powered search across OpenSea marketplace data. The AI agent analyzes your query and uses multiple GraphQL endpoints to find relevant results.	"Find BONK token on Solana"
+"Show me trending NFTs"
+"Search for gaming NFT collections"
+"Find Pudgy Penguins collection"
+fetch	Retrieve full details of a specific OpenSea entity by its unique identifier with maximum data including activity, analytics, offers, and all other available information.	"Get details for entity abc123"
+search_collections	Search for NFT collections by name, description, or metadata. Returns collections with floor price, volume, and stats.	"Search for Azuki collections"
+"Find art NFT collections on Ethereum"
+get_collection	Get detailed information about a specific NFT collection including stats, floor price, volume, and metadata. Optionally include activity, holders, offers, analytics, items, or attributes data	"Get details for boredapeyachtclub"
+"Show me stats for cryptopunks with trading activity"
+"What's the floor price of doodles-official?"
+search_items	Search for individual NFT items/tokens across OpenSea. Filter by collection and chain with pagination support.	"Find Bored Ape #1234"
+"Search for rare traits in Azuki"
+"Look for NFTs priced under 0.1 ETH"
+get_item	Get detailed information about a specific NFT including price, owner, metadata, traits, and trading history. Optionally include activity, offers, owners, or analytics data.	"Get details for BAYC token 5678"
+"Show me CryptoPunk #100 with price history"
+"Check the owner of this NFT at 0x123..."
+search_tokens	Search for cryptocurrencies and tokens by name or symbol, including ERC-20 tokens and meme coins. Returns rich token information including stats, socials, and warnings.	"Find USDC token"
+"Search for PEPE coin"
+"Look up SHIB token address"
+get_token	Get information about a specific cryptocurrency including name, symbol, decimals, market data, and optionally price history, activity, or OHLCV data.	"Get info for USDT at 0xdac17f..."
+"Show WETH token with price history"
+"What's the contract for DAI?"
+get_token_swap_quote	Get a swap quote and blockchain actions needed to perform a token swap.	"Quote swap 1 ETH to USDC"
+"How much WETH can I get for 1000 USDT?"
+"Calculate gas for swapping tokens"
+get_token_balances	Retrieve all token balances and points for a wallet address, sorted by USD value.	"Check token balances for 0x123..."
+"Show my wallet's token portfolio"
+get_token_balance	Get the balance of a specific token for a wallet address.	"Check USDC balance for 0x456..."
+"How much WETH does this wallet have?"
+"Verify token balance before swap"
+get_nft_balances	Retrieve all NFTs owned by a wallet address with metadata and current listings.	"Show NFTs owned by 0x789..."
+"What NFTs does snoop.eth own?"
+"Check my NFT collection"
+get_top_collections	Get top NFT collections by volume, floor price, sales count, and other metrics. Can filter by chain, category, and sort by various criteria.	"Show top NFT collections by volume"
+"What are the highest floor price collections?"
+"Top trending collections today"
+get_trending_collections	Get trending NFT collections based on recent trading activity within specified timeframes (ONE_HOUR, ONE_DAY, SEVEN_DAYS, THIRTY_DAYS).	"Show trending NFTs in the last hour"
+"What collections are hot this week?"
+"Find collections trending on Polygon"
+get_top_tokens	Get top cryptocurrencies and tokens sorted by ONE_DAY_VOLUME. Filter by chain to identify highest volume tokens.	"Show top tokens by daily volume"
+"What are the most traded tokens on Ethereum?"
+"Find high volume meme coins"
+get_trending_tokens	Get trending cryptocurrencies sorted by ONE_DAY_PRICE_CHANGE. Identify tokens with highest price increases.	"Show tokens with biggest gains today"
+"What cryptocurrencies are pumping?"
+"Find trending tokens on Base"
+get_profile	Get comprehensive profile information for a wallet address. Optionally include items, collections, activity, listings, offers, balances, or favorites.	"Show profile for wallet 0xabc..."
+"Get trading activity for vitalik.eth"
+"Check complete portfolio for this address"
+
+Common Use Cases
+Market Research:
+
+"What are the top gaming NFT collections by volume on Polygon?"
+
+Portfolio Analysis:
+
+"Show me all NFTs and tokens owned by wallet 0x123... and calculate total portfolio value"
+
+Trading Preparation:
+
+"Check if I have enough USDC to buy this NFT and calculate the swap from ETH if needed"
+
+Trend Monitoring:
+
+"Find NFT collections that are trending in the last 24 hours with floor price under 1 ETH"
+
+Token Discovery:
+
+"Search for new meme coins on Ethereum and show their current prices"
+
+Chain Support
+OpenSea MCP supports all of the blockchains supported on the OpenSea web front-end.
+
+When using tools, you can specify the chain parameter to filter results to a specific blockchain.
+
+Best Practices
+Use natural language - The AI-powered search understands context, so describe what you're looking for naturally
+Combine tools - Get comprehensive insights by using multiple tools together
+Specify chains - When looking for specific blockchain data, include the chain name
+Check balances first - Before requesting swap quotes, verify wallet has sufficient tokens
+Use collection slugs - For specific collections, use their OpenSea slug (e.g., 'boredapeyachtclub')
+Leverage includes parameters - Many tools support optional 'includes' arrays for additional data (activity, analytics, offers, etc.)
+Specify amounts correctly - For swaps, use native units (ETH/SOL) not smallest units (wei/lamports)
+Rate Limits and Performance
+Most queries return results within 1-3 seconds
+Rate limits apply per access token
+Use pagination for large result sets
+Cursor-based pagination available for trending and top collections/tokens
+Error Handling
+The MCP server provides clear error messages:
+
+Invalid addresses or contract addresses
+Unsupported chains
+Rate limit exceeded
+Insufficient token balance for swaps

@@ -1,12 +1,21 @@
 import React from 'react';
 import { useDynamicContext } from '@dynamic-labs/sdk-react-core';
 import { DynamicConnectButton, DynamicUserProfile, DynamicNav } from '@dynamic-labs/sdk-react-core';
+import NFTGallery from './NFTGallery';
+import VoiceAgent from './VoiceAgent/VoiceAgent';
 
-const DynamicWalletConnect: React.FC = () => {
-  const { 
-    user, 
-    primaryWallet
-  } = useDynamicContext();
+interface DynamicWalletConnectProps {
+  openaiApiKey: string;
+}
+
+const DynamicWalletConnect: React.FC<DynamicWalletConnectProps> = ({ openaiApiKey }) => {
+  console.log('DynamicWalletConnect rendering with openaiApiKey:', !!openaiApiKey);
+  
+  try {
+    const { 
+      user, 
+      primaryWallet
+    } = useDynamicContext();
 
   if (!user) {
     return (
@@ -18,13 +27,6 @@ const DynamicWalletConnect: React.FC = () => {
             Connect your wallet to join immersive video calls and interact with your NFTs through AI
           </p>
           
-          <div className="wallet-status-card">
-            <div className="status-indicator disconnected">
-              <div className="status-dot"></div>
-              <span>Wallet Not Connected</span>
-            </div>
-          </div>
-
           <div className="connect-button-container">
             <DynamicConnectButton>
               <span className="button-content">
@@ -38,88 +40,37 @@ const DynamicWalletConnect: React.FC = () => {
     );
   }
 
-  return (
-    <div className="connected-section">
-      <div className="wallet-dashboard">
-        {/* Main Wallet Info - Positioned prominently */}
-        <div className="wallet-main-section">
-          <div className="wallet-card main-wallet">
-            <div className="card-header">
-              <h3>🎉 Wallet Connected!</h3>
-              <div className="status-badge connected">
-                <span className="status-dot"></span>
-                Connected
-              </div>
-            </div>
-            
-            <div className="wallet-details">
-              <div className="detail-row">
-                <span className="detail-label">Address:</span>
-                <code className="wallet-address">
-                  {primaryWallet?.address || 'Unknown'}
-                </code>
-              </div>
-              <div className="detail-row">
-                <span className="detail-label">Chain:</span>
-                <span className="chain-badge">{primaryWallet?.chain || 'Unknown'}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Dynamic Components - Right side */}
-        <div className="dynamic-components-section">
-          <div className="component-card">
-            <h3>User Profile</h3>
-            <DynamicUserProfile />
+    return (
+      <div className="connected-section">
+        <div className="wallet-dashboard">
+          {/* NFT Gallery - Main Content */}
+          <div className="nft-gallery-section">
+            <NFTGallery walletAddress={primaryWallet?.address || ''} />
           </div>
 
-          <div className="component-card">
-            <h3>Navigation</h3>
-            <DynamicNav />
-          </div>
-        </div>
-
-        {/* Progress Steps - Bottom */}
-        <div className="progress-section">
-          <h3>Ready for the Next Level?</h3>
-          <div className="steps-grid">
-            <div className="step-item completed">
-              <div className="step-icon">✅</div>
-              <div className="step-content">
-                <h4>Wallet Connected</h4>
-                <p>Your wallet is ready</p>
-              </div>
+          {/* Dynamic Components - Right side */}
+          <div className="dynamic-components-section">
+            <div className="component-card">
+              <DynamicNav />
             </div>
             
-            <div className="step-item active">
-              <div className="step-icon">🔄</div>
-              <div className="step-content">
-                <h4>Fetching NFTs</h4>
-                <p>Loading your collection</p>
-              </div>
-            </div>
-            
-            <div className="step-item">
-              <div className="step-icon">📹</div>
-              <div className="step-content">
-                <h4>Join Video Call</h4>
-                <p>Enter the metaverse</p>
-              </div>
-            </div>
-            
-            <div className="step-item">
-              <div className="step-icon">🤖</div>
-              <div className="step-content">
-                <h4>AI Agent</h4>
-                <p>Interact with your NFTs</p>
-              </div>
+            {/* Voice Agent Component */}
+            <div className="component-card voice-agent-card">
+              <VoiceAgent openaiApiKey={openaiApiKey} />
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } catch (error) {
+    console.error('Error in DynamicWalletConnect:', error);
+    return (
+      <div className="error-message">
+        <h3>❌ Error Loading Wallet Component</h3>
+        <p>Something went wrong: {error instanceof Error ? error.message : 'Unknown error'}</p>
+      </div>
+    );
+  }
 };
 
 export default DynamicWalletConnect;

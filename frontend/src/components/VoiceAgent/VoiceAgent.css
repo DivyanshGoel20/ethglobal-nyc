@@ -1,0 +1,350 @@
+.voice-agent {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* When inside a card container */
+.component-card .voice-agent {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.voice-agent-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.voice-agent-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, #fff, #f0f0f0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.voice-agent-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Voice Controls */
+.voice-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.push-to-talk {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  border: none;
+  border-radius: 50px;
+  padding: 1.5rem 3rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  min-width: 200px;
+}
+
+.push-to-talk:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.push-to-talk:active {
+  transform: translateY(0);
+}
+
+.push-to-talk.listening {
+  background: linear-gradient(45deg, #00b894, #00a085);
+  animation: pulse 1.5s infinite;
+}
+
+.push-to-talk:disabled,
+.push-to-talk.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  background: linear-gradient(45deg, #666, #999);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Status Indicators */
+.status-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.status {
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.status.listening {
+  background: linear-gradient(45deg, #00b894, #00a085);
+}
+
+.status.processing {
+  background: linear-gradient(45deg, #fdcb6e, #e17055);
+}
+
+.status.speaking {
+  background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Content Sections */
+.transcript-section,
+.response-section,
+.crypto-data-section,
+.error-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.transcript-section h3,
+.response-section h3,
+.crypto-data-section h3,
+.error-section h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: #f0f0f0;
+}
+
+.transcript {
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  border-left: 4px solid #00b894;
+}
+
+.response {
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  border-left: 4px solid #6c5ce7;
+}
+
+.crypto-data {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.crypto-data pre {
+  margin: 0;
+  color: #f0f0f0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.error {
+  color: #ff7675;
+  font-weight: bold;
+}
+
+/* Instructions */
+.instructions {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.instructions h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: #f0f0f0;
+}
+
+.instructions h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  color: #e0e0e0;
+}
+
+.instructions ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.instructions li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .voice-agent {
+    padding: 1rem;
+    margin: 1rem;
+  }
+  
+  .voice-agent-header h2 {
+    font-size: 2rem;
+  }
+  
+  .push-to-talk {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+    min-width: 180px;
+  }
+  
+  .status-indicators {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Card layout adjustments */
+  .component-card .voice-agent {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .component-card .voice-agent-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .component-card .push-to-talk {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    min-width: 120px;
+  }
+}
+
+/* Text Input Fallback Styles */
+.text-input-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.text-input-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.text-input-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.text-input-form {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.text-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.75rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  backdrop-filter: blur(10px);
+}
+
+.text-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.text-input:focus {
+  outline: none;
+  border-color: #4ecdc4;
+  box-shadow: 0 0 0 2px rgba(78, 205, 196, 0.2);
+}
+
+.text-submit-btn {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  border: none;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.text-submit-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(78, 205, 196, 0.3);
+}
+
+.text-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Card layout adjustments for text input */
+.component-card .text-input-fallback {
+  margin-top: 0.5rem;
+}
+
+.component-card .text-input-form {
+  max-width: 100%;
+}
+
+.component-card .text-input {
+  font-size: 0.8rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.component-card .text-submit-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}

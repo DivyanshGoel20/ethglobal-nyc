@@ -3,7 +3,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #000000;
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
   color: white;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   width: 100%;
@@ -12,8 +12,8 @@
 }
 
 .App-header {
-  padding: 2rem;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   width: 100%;
@@ -22,9 +22,9 @@
 
 .App-header h1 {
   margin: 0;
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 50%, #093637 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -32,8 +32,8 @@
 }
 
 .App-header p {
-  margin: 0.5rem 0 0 0;
-  font-size: 1.3rem;
+  margin: 1rem 0 0 0;
+  font-size: 1.4rem;
   opacity: 0.8;
   font-weight: 400;
 }
@@ -52,8 +52,8 @@
 /* Connect Section Styles */
 .connect-section {
   width: 100%;
-  max-width: 100%;
-  min-width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
 }
@@ -61,20 +61,19 @@
 .hero-content {
   text-align: center;
   width: 100%;
-  max-width: 800px;
-  min-width: 100%;
+  max-width: 600px;
 }
 
 .hero-icon {
-  font-size: 4rem;
-  margin-bottom: 1rem;
+  font-size: 5rem;
+  margin-bottom: 2rem;
   animation: float 3s ease-in-out infinite;
 }
 
 .hero-content h2 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 700;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.5rem 0;
   background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -82,47 +81,13 @@
 }
 
 .hero-description {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   line-height: 1.6;
   opacity: 0.8;
-  margin-bottom: 2rem;
-  max-width: 600px;
+  margin-bottom: 3rem;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.wallet-status-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 1.5rem;
-  margin: 2rem 0;
-  backdrop-filter: blur(20px);
-}
-
-.status-indicator {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-
-.status-indicator.disconnected {
-  color: #ff6b6b;
-}
-
-.status-indicator.connected {
-  color: #4ecdc4;
-}
-
-.status-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: currentColor;
-  animation: pulse 2s infinite;
 }
 
 .connect-button-container {
@@ -130,23 +95,23 @@
 }
 
 .connect-button-container button {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
   border: none;
   color: white;
-  padding: 1.2rem 2.5rem;
-  font-size: 1.2rem;
+  padding: 1.5rem 3rem;
+  font-size: 1.3rem;
   font-weight: 600;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 8px 32px rgba(78, 205, 196, 0.3);
   position: relative;
   overflow: hidden;
 }
 
 .connect-button-container button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 12px 40px rgba(78, 205, 196, 0.4);
 }
 
 .button-content {
@@ -156,24 +121,22 @@
 }
 
 .button-icon {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 
 /* Connected Section Styles */
 .connected-section {
   width: 100%;
   max-width: 100%;
-  min-width: 100%;
   display: flex;
   justify-content: center;
 }
 
 .wallet-dashboard {
   width: 100%;
-  max-width: 1200px;
-  min-width: 100%;
+  max-width: 100%;
   display: grid;
-  grid-template-columns: 1fr 400px;
+  grid-template-columns: 1fr 350px;
   gap: 2rem;
   align-items: start;
 }
@@ -182,6 +145,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  width: 100%;
 }
 
 .main-wallet {
@@ -190,6 +154,7 @@
   border-radius: 20px;
   padding: 2rem;
   backdrop-filter: blur(20px);
+  width: 100%;
 }
 
 .wallet-card {
@@ -198,6 +163,7 @@
   border-radius: 20px;
   padding: 2rem;
   backdrop-filter: blur(20px);
+  width: 100%;
 }
 
 .card-header {
@@ -228,6 +194,14 @@
   background: rgba(78, 205, 196, 0.2);
   color: #4ecdc4;
   border: 1px solid rgba(78, 205, 196, 0.3);
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: pulse 2s infinite;
 }
 
 .wallet-details {
@@ -262,7 +236,7 @@
 }
 
 .chain-badge {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 20px;
@@ -275,96 +249,35 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  position: sticky;
+  position: fixed;
   top: 2rem;
+  right: 2rem;
+  z-index: 1000;
 }
 
 .component-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 16px;
   padding: 1.5rem;
   text-align: center;
+  min-width: 280px;
+  max-width: 320px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .component-card h3 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 600;
   margin: 0 0 1rem 0;
   color: #e0e0e0;
-}
-
-/* Progress Section - Bottom */
-.progress-section {
-  grid-column: 1 / -1;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.progress-section h3 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin: 0 0 2rem 0;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.step-item {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  transition: all 0.3s ease;
-}
-
-.step-item.completed {
-  border-color: rgba(78, 205, 196, 0.3);
-  background: rgba(78, 205, 196, 0.05);
-}
-
-.step-item.active {
-  border-color: rgba(102, 126, 234, 0.3);
-  background: rgba(102, 126, 234, 0.05);
-  transform: scale(1.02);
-}
-
-.step-icon {
-  font-size: 2rem;
-  flex-shrink: 0;
-}
-
-.step-content {
-  text-align: left;
-}
-
-.step-content h4 {
-  margin: 0 0 0.25rem 0;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #e0e0e0;
-}
-
-.step-content p {
-  margin: 0;
-  font-size: 0.9rem;
-  opacity: 0.7;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
 }
 
 .App-footer {
-  padding: 1.5rem;
+  padding: 2rem;
   background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(10px);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -389,40 +302,6 @@
   50% { opacity: 0.5; }
 }
 
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(-10px); }
-  60% { transform: translateY(-5px); }
-}
-
-/* Additional fixes for full width */
-.App > * {
-  width: 100%;
-  max-width: 100%;
-}
-
-.App-main > * {
-  width: 100%;
-  max-width: 100%;
-}
-
-/* Temporary debugging - remove after testing */
-.App {
-  border: 2px solid red;
-}
-
-.App-main {
-  border: 2px solid blue;
-}
-
-.connect-section {
-  border: 2px solid green;
-}
-
-.connected-section {
-  border: 2px solid orange;
-}
-
 /* Responsive Design */
 @media (max-width: 1024px) {
   .wallet-dashboard {
@@ -432,20 +311,75 @@
   
   .dynamic-components-section {
     position: static;
+    right: auto;
+    top: auto;
+    order: -1;
+  }
+  
+  .nft-gallery-section {
+    max-width: 100%;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .config-setup {
+    padding: 2rem 1rem;
+  }
+  
+  .config-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .config-header p {
+    font-size: 1.1rem;
+  }
+  
+  .config-step {
+    padding: 1.5rem;
+  }
+  
+  .config-step h3 {
+    font-size: 1.3rem;
+  }
+  
+  .env-var {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  
+  .env-var code {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .key-link {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 768px) {
   .App-header h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
   
   .hero-content h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   
-  .steps-grid {
-    grid-template-columns: 1fr;
+  .hero-icon {
+    font-size: 4rem;
+  }
+  
+  .wallet-dashboard {
+    gap: 1rem;
+  }
+  
+  .connect-button-container button {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
   }
   
   .detail-row {
@@ -454,7 +388,583 @@
     align-items: flex-start;
   }
   
-  .wallet-dashboard {
+  .dynamic-components-section {
+    position: static;
+    right: auto;
+    top: auto;
+    margin: 2rem auto;
+    order: -1;
+  }
+  
+  .component-card {
+    min-width: auto;
+    max-width: 100%;
+    margin: 0 1rem;
+  }
+  
+  .voice-agent-card .push-to-talk {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    min-width: 120px;
+  }
+  
+  .config-setup {
+    padding: 2rem 1rem;
+  }
+  
+  .config-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .config-header p {
+    font-size: 1.1rem;
+  }
+  
+  .config-step {
+    padding: 1.5rem;
+  }
+  
+  .config-step h3 {
+    font-size: 1.3rem;
+  }
+  
+  .env-var {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  
+  .env-var code {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .key-link {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Additional fixes for full width */
+.App > * {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* NFT Gallery Styles */
+.nft-gallery-section {
+  flex: 1;
+  width: 100%;
+  margin-right: 0;
+}
+
+.nft-gallery {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 2rem;
+  backdrop-filter: blur(20px);
+}
+
+.gallery-header {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.gallery-title h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.wallet-address-display {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.chain-filter {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.chain-filter-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.chain-filter-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.chain-filter-btn.active {
+  background: var(--chain-color, #4ecdc4);
+  border-color: var(--chain-color, #4ecdc4);
+  color: white;
+  box-shadow: 0 4px 20px rgba(78, 205, 196, 0.3);
+}
+
+.nft-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.nft-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.nft-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.nft-image-container {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.nft-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.nft-card:hover .nft-image {
+  transform: scale(1.05);
+}
+
+.nft-chain-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nft-info {
+  padding: 1.5rem;
+}
+
+.nft-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: #e0e0e0;
+  line-height: 1.3;
+}
+
+.nft-collection {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  margin: 0 0 1rem 0;
+}
+
+.nft-rarity {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.rarity-rank {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.rarity-percentage {
+  color: #b0b0b0;
+  font-size: 0.8rem;
+}
+
+.nft-attributes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.attribute-tag {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e0e0e0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.attribute-more {
+  color: #b0b0b0;
+  font-size: 0.75rem;
+  font-style: italic;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Loading and Empty States */
+.nft-gallery-loading {
+  text-align: center;
+  padding: 3rem;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top: 3px solid #4ecdc4;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.nft-gallery-empty {
+  text-align: center;
+  padding: 3rem;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.nft-gallery-empty h3 {
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+  color: #e0e0e0;
+}
+
+.nft-gallery-empty p {
+  color: #b0b0b0;
+  margin: 0;
+}
+
+/* Responsive Design for NFT Gallery */
+@media (max-width: 1024px) {
+  .nft-gallery-section {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .nft-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .nft-gallery {
+    padding: 1.5rem;
+  }
+  
+  .gallery-title h2 {
+    font-size: 1.5rem;
+  }
+  
+  .chain-filter {
+    gap: 0.5rem;
+  }
+  
+  .chain-filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .nft-grid {
+    grid-template-columns: 1fr;
     gap: 1rem;
   }
+  
+  .nft-info {
+    padding: 1rem;
+  }
+}
+
+/* Voice Agent Section */
+.voice-agent-section {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.voice-agent-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #f0f0f0;
+}
+
+/* Voice Agent Card Styling */
+.voice-agent-card {
+  margin-top: 1.5rem;
+}
+
+.voice-agent-card .voice-agent {
+  max-width: 100%;
+  margin: 0;
+  padding: 1rem;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.voice-agent-card .voice-agent-header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.voice-agent-card .voice-agent-header p {
+  font-size: 0.9rem;
+}
+
+.voice-agent-card .push-to-talk {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  min-width: 150px;
+}
+
+.voice-agent-card .status-indicators {
+  margin-bottom: 1rem;
+}
+
+.voice-agent-card .transcript-section,
+.voice-agent-card .response-section,
+.voice-agent-card .crypto-data-section,
+.voice-agent-card .error-section,
+.voice-agent-card .instructions {
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.voice-agent-card .transcript,
+.voice-agent-card .response {
+  font-size: 0.9rem;
+  padding: 0.75rem;
+}
+
+/* Configuration Setup Styling */
+.config-setup {
+  text-align: center;
+  padding: 3rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.config-header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.config-header p {
+  font-size: 1.3rem;
+  opacity: 0.8;
+  margin-bottom: 3rem;
+}
+
+.config-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.config-step {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(20px);
+  text-align: left;
+}
+
+.config-step h3 {
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0;
+  color: #4ecdc4;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.config-step p {
+  font-size: 1.1rem;
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+}
+
+.config-step code {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.env-vars {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.env-var {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.env-var code {
+  flex: 1;
+  margin-right: 1rem;
+  text-align: left;
+}
+
+.status {
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.status {
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.status.success {
+  background: rgba(78, 205, 196, 0.2);
+  color: #4ecdc4;
+  border: 1px solid rgba(78, 205, 196, 0.3);
+}
+
+.status.error {
+  background: rgba(255, 107, 107, 0.2);
+  color: #ff6b6b;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.key-sources {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.key-link {
+  display: inline-block;
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(78, 205, 196, 0.3);
+}
+
+.key-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(78, 205, 196, 0.4);
+}
+
+.config-note {
+  background: rgba(78, 205, 196, 0.1);
+  border: 1px solid rgba(78, 205, 196, 0.3);
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.config-note p {
+  margin: 0;
+  color: #4ecdc4;
+  font-size: 1rem;
+}
+
+/* Loading State Styling */
+.loading-state {
+  text-align: center;
+  padding: 3rem;
+  color: #4ecdc4;
+}
+
+.loading-state h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: pulse 2s infinite;
+}
+
+.loading-state p {
+  font-size: 1.3rem;
+  opacity: 0.8;
+}
+
+/* Error Message Styling (fallback) */
+.error-message {
+  text-align: center;
+  padding: 3rem;
+  color: #ff6b6b;
+}
+
+.error-message h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.error-message p {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
